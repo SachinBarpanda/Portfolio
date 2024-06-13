@@ -20,6 +20,7 @@ router.get('/get-portfolio-data',async(req,res)=>{
             blogs : blogs , 
         }); 
     }catch(error){
+        console.log(error)
         res.status(500).send(error)
     }
 })
