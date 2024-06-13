@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://portfolio-1-fak3.onrender.com/',
+        target: 'https://portfolio-ktnp.onrender.com/',
         changeOrigin: true,
       },
     },
