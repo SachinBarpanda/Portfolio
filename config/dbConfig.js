@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
+require("dotenv").config();
 
-mongoose.connect(process.env.MONGO_URL || 'mongodb://127.0.0.1:27017/portfolio');
+mongoose.connect(process.env.MONGO_URL);//|| 'mongodb://127.0.0.1:27017/portfolio'
 
 const connection = mongoose.connection;
 
 connection.on('error',()=>{
-    console.log("Error connecting to database")
+    console.log("Error connecting to database");
 });
 
 connection.on('connected',()=>{
