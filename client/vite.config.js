@@ -8,7 +8,7 @@ export default defineConfig({
     proxy: {
       '/api': {
         target: 'https://portfolio-ktnp.onrender.com/',
-        changeOrigin: true,
+       
       },
     },
   },
