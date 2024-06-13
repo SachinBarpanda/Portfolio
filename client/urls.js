@@ -1,0 +1,1 @@
+export const VITE_APP_BASE_URL = 'https://portfolio-ktnp.onrender.com'
