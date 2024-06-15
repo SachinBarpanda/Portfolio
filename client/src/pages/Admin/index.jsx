@@ -47,11 +47,11 @@ const items = [
 function index() {
   const {portfolioData} = useSelector((state)=> state.root );
 
-  useEffect(()=>{
-    if(!localStorage.getItem("token")){
-      window.location.href = "/admin-login"
-    }
-  },[items])
+  // useEffect(()=>{
+  //   if(!localStorage.getItem("token")){
+  //     window.location.href = "/admin-login"
+  //   }
+  // },[items])
 
   return (
     <div>
