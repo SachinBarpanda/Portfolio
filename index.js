@@ -10,14 +10,7 @@ app.use(express.json());
 app.use(cors())
 app.use("/api/portfolio/",portfolioRoute);
 
-app.use(express.static(path.join(__dirname, 'build')));
 
-
-app.get('*', (req, res) => {
-
-  res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
-
-});
 
 
 
