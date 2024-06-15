@@ -43,11 +43,11 @@ function App() {
   const router = createBrowserRouter([
     {
       path: '',
-      element: <Home />
+      element: <Home/>
     },
     {
       path: '/admin',
-      element: <Admin />
+      element: <Admin/>
     },
     {
       path: '/admin-login',
@@ -64,6 +64,7 @@ function App() {
       }}
     >
       <RouterProvider router={router} />
+      
     </ConfigProvider>
 
 }
