@@ -17,7 +17,7 @@ function App() {
   const getPortfolioData = async () => {
     try {
       dispatch(ShowLoading());
-      const response = await axios.get(VITE_APP_BASE_URL+"api/portfolio/get-portfolio-data")
+      const response = await axios.get(VITE_APP_BASE_URL + "api/portfolio/get-portfolio-data")
       dispatch(setPortfolioData(response.data))
       dispatch(HideLoading())
       dispatch(ReloadData(false))
@@ -34,30 +34,31 @@ function App() {
       getPortfolioData()
   }, [portfolioData])
 
-  useEffect(()=>{
-    if(reloadData){
+  useEffect(() => {
+    if (reloadData) {
       getPortfolioData();
     }
-  },[reloadData])
+  }, [reloadData])
 
   const router = createBrowserRouter([
     {
-    
+      path: '/',
+      element: <App />,
       children:
-      [
-        {
-          path: '/',
-          element: <Home/>,
-        },
-        {
-          path: '/admin',
-          element: <Admin/>
-        },
-        {
-          path: '/admin-login',
-          element: <Login />
-        },
-      ]
+        [
+          {
+            path: '/',
+            element: <Home />,
+          },
+          {
+            path: '/admin',
+            element: <Admin />
+          },
+          {
+            path: '/admin-login',
+            element: <Login />
+          },
+        ]
     },
   ])
 
@@ -69,9 +70,9 @@ function App() {
         algorithm: theme.darkAlgorithm,
       }}
     >
-      
+
       <RouterProvider router={router} />
-      
+
     </ConfigProvider>
 
 }
