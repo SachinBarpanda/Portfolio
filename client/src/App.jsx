@@ -42,16 +42,22 @@ function App() {
 
   const router = createBrowserRouter([
     {
-      path: '',
-      element: <Home/>
-    },
-    {
-      path: '/admin',
-      element: <Admin/>
-    },
-    {
-      path: '/admin-login',
-      element: <Login />
+    
+      children:
+      [
+        {
+          path: '/',
+          element: <Home/>,
+        },
+        {
+          path: '/admin',
+          element: <Admin/>
+        },
+        {
+          path: '/admin-login',
+          element: <Login />
+        },
+      ]
     },
   ])
 
@@ -63,6 +69,7 @@ function App() {
         algorithm: theme.darkAlgorithm,
       }}
     >
+      
       <RouterProvider router={router} />
       
     </ConfigProvider>
