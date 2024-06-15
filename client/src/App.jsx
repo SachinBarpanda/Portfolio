@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import './App.css'
 import Loader from './component/Loader'
 import axios from "axios"
@@ -48,14 +48,10 @@ function App() {
     </div>
 
     :
-    <ConfigProvider
-      theme={{
-        algorithm: theme.darkAlgorithm,
-      }}
-    >
+    
       <Outlet/>
 
-    </ConfigProvider>
+
 
 }
 
