@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { HideLoading, setPortfolioData, ShowLoading, ReloadData } from './redux/rootSlice'
 import { ConfigProvider, theme } from 'antd'
 import Login from './pages/Admin/Login'
+import VITE_APP_BASE_URL from '../urls'
 
 function App() {
   const { loading, portfolioData, reloadData } = useSelector((state) => state.root)
@@ -16,7 +17,7 @@ function App() {
   const getPortfolioData = async () => {
     try {
       dispatch(ShowLoading());
-      const response = await axios.get( "/api/portfolio/get-portfolio-data")
+      const response = await axios.get(VITE_APP_BASE_URL+"api/portfolio/get-portfolio-data")
       dispatch(setPortfolioData(response.data))
       dispatch(HideLoading())
       dispatch(ReloadData(false))

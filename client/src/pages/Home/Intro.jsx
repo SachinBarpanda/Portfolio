@@ -18,7 +18,12 @@ function Intro() {
       <p className='text-xl text-white text-left'>
         {description || ''}
       </p>
-      <button className='text-xl text-tertiary border-2 border-tertiary px-4 py-2 hover:text-white hover:bg-tertiary rounded-lg'>Get Started</button>
+      <div className='flex'>
+
+      <button className='text-xl text-tertiary border-2 border-tertiary px-4 py-2 mr-40 hover:text-white hover:bg-tertiary rounded-lg'>Get Started</button>
+      <a href='/admin' className='w-fit border-2 px-5 py-2 text-2xl text-white rounded-lg'>Admin </a>
+      </div>
+
     </div>
   )
 }
