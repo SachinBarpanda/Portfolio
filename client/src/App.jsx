@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './App.css'
 import Loader from './component/Loader'
 import axios from "axios"
@@ -40,38 +40,20 @@ function App() {
     }
   }, [reloadData])
 
-  const router = createBrowserRouter([
-    {
-      path: '/',
-      element: <App />,
-      children:
-        [
-          {
-            path: '/',
-            element: <Home />,
-          },
-          {
-            path: '/admin',
-            element: <Admin />
-          },
-          {
-            path: '/admin-login',
-            element: <Login />
-          },
-        ]
-    },
-  ])
-
+  
   return loading ?
+    <div>
+
     <Loader />
+    </div>
+
     :
     <ConfigProvider
       theme={{
         algorithm: theme.darkAlgorithm,
       }}
     >
-
-      <RouterProvider router={router} />
+      <Outlet/>
 
     </ConfigProvider>
 
