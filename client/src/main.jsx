@@ -17,11 +17,11 @@ const router = createBrowserRouter([
       [
         {
           path: '/',
-          element: <Home />,
+          element:  <Admin />
         },
         {
           path: '/admin',
-          element: <Admin />
+          element: <Home />
         },
         {
           path: '/admin-login',
@@ -32,9 +32,11 @@ const router = createBrowserRouter([
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
   <Provider store={store}>
 
     <RouterProvider router={router} />
 
   </Provider>,
+  </React.StrictMode>
 )
