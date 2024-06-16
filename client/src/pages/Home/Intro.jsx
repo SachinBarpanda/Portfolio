@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom';
 
 function Intro() {
   const {loading, portfolioData } = useSelector((state)=>state.root)
@@ -21,7 +22,7 @@ function Intro() {
       <div className='flex'>
 
       <button className='text-xl text-tertiary border-2 border-tertiary px-4 py-2 mr-40 hover:text-white hover:bg-tertiary rounded-lg'>Get Started</button>
-      <a href='/admin' className='w-fit border-2 px-5 py-2 text-2xl text-white rounded-lg'>Admin </a>
+      <Link to='/admin' className='w-fit border-2 px-5 py-2 text-2xl text-white rounded-lg'>Admin </Link>
       </div>
 
     </div>
