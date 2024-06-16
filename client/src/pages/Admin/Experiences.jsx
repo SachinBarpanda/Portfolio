@@ -3,6 +3,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { HideLoading, ShowLoading, ReloadData } from '../../redux/rootSlice';
+import VITE_APP_BASE_URL from '../../../urls';
 
 function Experiences() {
     const dispatch = useDispatch();
@@ -18,13 +19,13 @@ function Experiences() {
             dispatch(ShowLoading())
             let response;
             if (selectedItemForEdit) {
-                response = await axios.post(VITE_APP_BASE_URL+"/api/portfolio/update-experience"
+                response = await axios.post(VITE_APP_BASE_URL+"api/portfolio/update-experience"
                     , {
                         ...values,
                         _id: selectedItemForEdit._id,
                     })
             } else {
-                response = await axios.post(VITE_APP_BASE_URL+"/api/portfolio/add-experience"
+                response = await axios.post(VITE_APP_BASE_URL+"api/portfolio/add-experience"
                     , values)
             }
 
@@ -48,7 +49,7 @@ function Experiences() {
     const onDelete = async (item) => {
         try {
             dispatch(ShowLoading());
-            const response = await axios.post(VITE_APP_BASE_URL+"/api/portfolio/delete-experience", {
+            const response = await axios.post(VITE_APP_BASE_URL+"api/portfolio/delete-experience", {
                 _id: item._id,
             });
             dispatch(HideLoading());

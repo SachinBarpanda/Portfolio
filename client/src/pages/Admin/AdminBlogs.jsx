@@ -3,6 +3,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { HideLoading, ShowLoading, ReloadData } from '../../redux/rootSlice';
+import VITE_APP_BASE_URL from '../../../urls';
 
 function AdminBlogs() {
     const dispatch = useDispatch();
@@ -23,13 +24,13 @@ function AdminBlogs() {
             dispatch(ShowLoading())
             let response;
             if (selectedItemForEdit) {
-                response = await axios.post(VITE_APP_BASE_URL+"/api/portfolio/update-blog"
+                response = await axios.post(VITE_APP_BASE_URL+"api/portfolio/update-blog"
                     , {
                         ...values,
                         _id: selectedItemForEdit._id,
                     })
             } else {
-                response = await axios.post(VITE_APP_BASE_URL+"/api/portfolio/add-blog"
+                response = await axios.post(VITE_APP_BASE_URL+"api/portfolio/add-blog"
                     , values)
             }
 
@@ -54,7 +55,7 @@ function AdminBlogs() {
     const onDelete = async (item) => {
         try {
             dispatch(ShowLoading());
-            const response = await axios.post(VITE_APP_BASE_URL+"/api/portfolio/delete-blog", {
+            const response = await axios.post(VITE_APP_BASE_URL+"api/portfolio/delete-blog", {
                 _id: item._id,
             });
             dispatch(HideLoading());

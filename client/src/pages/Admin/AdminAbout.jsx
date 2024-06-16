@@ -3,6 +3,7 @@ import React from 'react'
 import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
 import {ShowLoading , HideLoading} from "../../redux/rootSlice"
+import VITE_APP_BASE_URL from '../../../urls'
 
 function AdminAbout() {
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ function AdminAbout() {
     values.skills = tempSkills;
     try{
       dispatch(ShowLoading())
-      const response = await axios.post(VITE_APP_BASE_URL+`/api/portfolio/update-about`
+      const response = await axios.post(VITE_APP_BASE_URL+`api/portfolio/update-about`
       ,{...values,
       _id: portfolioData.about._id
     })
