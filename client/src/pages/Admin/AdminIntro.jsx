@@ -11,7 +11,7 @@ function AdminIntro() {
   const onFinish = async (values)=>{
     try{
       dispatch(ShowLoading())
-      const response = await axios.post("/api/portfolio/update-intro"
+      const response = await axios.post(VITE_APP_BASE_URL+"/api/portfolio/update-intro"
       ,{...values, 
       _id: portfolioData.intros._id
     })
