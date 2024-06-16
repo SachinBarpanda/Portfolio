@@ -14,7 +14,7 @@ function App() {
   const getPortfolioData = async () => {
     try {
       dispatch(ShowLoading());
-      const response = await axios.get("api/portfolio/get-portfolio-data")
+      const response = await axios.get(VITE_APP_BASE_URL+"api/portfolio/get-portfolio-data")
       dispatch(setPortfolioData(response.data))
       dispatch(HideLoading())
       dispatch(ReloadData(false))
