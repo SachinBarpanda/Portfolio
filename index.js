@@ -7,7 +7,7 @@ require("dotenv").config();
 const portfolioRoute = require("./routes/portfolioRoute")
 app.use(express.json());
 app.use("/api/portfolio/",portfolioRoute);
-
+app.use(express.static("dist"))
 
 
 const port = process.env.PORT || 5000;
