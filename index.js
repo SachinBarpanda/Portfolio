@@ -2,7 +2,6 @@ const express = require('express')
 const app = express()
 const dbConfig = require('./config/dbConfig')
 const cors = require('cors')
-require("dotenv").config();
 
 app.use(cors())
 const portfolioRoute = require("./routes/portfolioRoute")

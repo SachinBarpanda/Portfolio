@@ -16,7 +16,7 @@ function Login() {
   const login = async () => {
     try {
       dispatch(ShowLoading());
-      const response = await axios.post('/api/portfolio/admin-login', user);
+      const response = await axios.post(VITE_APP_BASE_URL+'api/portfolio/admin-login', user);
       dispatch(HideLoading());
       if (response.data.success) {
         localStorage.setItem('token', JSON.stringify(response.data.token));
